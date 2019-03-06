@@ -3,4 +3,14 @@ services:
   - docker
 
 script:
-  - docker build -t react-app .
+  - docker build -t andrewtdunn28/react-example2 .
+  - docker images andrewtdunn28/react-example2
+
+befor_deploy:
+  - docker login -u andrewtdunn28 -p s@mples@mple
+
+deploy:
+  provider: script
+  script: docker push andrewtdunn28/react-example2
+  on:
+    branch: master
