@@ -6,7 +6,7 @@ script:
   - docker build -t andrewtdunn28/react-example2 .
   - docker images andrewtdunn28/react-example2
 
-befor_deploy:
+before_deploy:
   - docker login -u andrewtdunn28 -p s@mples@mple
 
 deploy:
